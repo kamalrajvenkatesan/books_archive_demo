@@ -16,6 +16,7 @@ protocol BooksListDisplayLogic: class
 {
     func displayListOfBooks(viewModel: BooksList.getBooks.ViewModel)
     func handlePlaceholder(show: Bool, type: PlaceholderType?)
+    func handleLoader(show: Bool)
 }
 
 class BooksListViewController: UIViewController, BooksListDisplayLogic
@@ -117,7 +118,10 @@ class BooksListViewController: UIViewController, BooksListDisplayLogic
         
         self.placeholderView.isHidden = !show
         self.placeholderView.type = type
-        
+    }
+    
+    func handleLoader(show: Bool) {
+        show ? self.activityIndicator.startAnimating() : self.activityIndicator.stopAnimating()
     }
     
     // MARK: Action

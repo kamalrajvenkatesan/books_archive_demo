@@ -16,6 +16,7 @@ protocol BooksListPresentationLogic
 {
     func presentBooks(response: BooksList.getBooks.Response)
     func presentPlaceholder(show: Bool, type: PlaceholderType?)
+    func presentLoader(show: Bool)
 }
 
 class BooksListPresenter: BooksListPresentationLogic
@@ -38,5 +39,9 @@ class BooksListPresenter: BooksListPresentationLogic
     
     func presentPlaceholder(show: Bool, type: PlaceholderType?) {
         viewController?.handlePlaceholder(show: show, type: type)
+    }
+    
+    func presentLoader(show: Bool) {
+        viewController?.handleLoader(show: show)
     }
 }

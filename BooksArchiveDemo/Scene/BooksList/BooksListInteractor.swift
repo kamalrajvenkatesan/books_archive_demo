@@ -32,8 +32,12 @@ class BooksListInteractor: BooksListBusinessLogic, BooksListDataStore
     // MARK: Get Books
     func getBooks(request: BooksList.getBooks.Request)
     {
+        presenter?.presentLoader(show: true)
+        
         worker = BooksListWorker()
         worker?.getAllBooks(completion: { [weak self] (books, error, statusCode) in
+            
+            self?.presenter?.presentLoader(show: false)
             
             self?.books = books
             
