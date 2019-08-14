@@ -12,7 +12,9 @@
 
 import UIKit
 
-@objc protocol BooksListRoutingLogic {}
+@objc protocol BooksListRoutingLogic {
+    func navigateToDetailView(index: Int)
+}
 
 protocol BooksListDataPassing
 {
@@ -25,4 +27,7 @@ class BooksListRouter: NSObject, BooksListRoutingLogic, BooksListDataPassing
     var dataStore: BooksListDataStore?
     
     // MARK: Routing
+    func navigateToDetailView(index: Int) {
+        
+    }
 }

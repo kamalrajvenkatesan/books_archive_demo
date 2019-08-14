@@ -128,3 +128,9 @@ extension BooksListViewController: UITableViewDataSource {
         return cell
     }
 }
+
+extension BooksListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        router?.navigateToDetailView(index: indexPath.row)
+    }
+}

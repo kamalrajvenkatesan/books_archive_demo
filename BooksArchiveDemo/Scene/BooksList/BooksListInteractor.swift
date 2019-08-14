@@ -19,13 +19,15 @@ protocol BooksListBusinessLogic
 
 protocol BooksListDataStore
 {
-    //var name: String { get set }
+    var books: [Book]? { get set }
 }
 
 class BooksListInteractor: BooksListBusinessLogic, BooksListDataStore
 {
     var presenter: BooksListPresentationLogic?
     var worker: BooksListWorker?
+    
+    var books: [Book]?
     
     // MARK: Get Books
     func getBooks(request: BooksList.getBooks.Request)
@@ -38,6 +40,8 @@ class BooksListInteractor: BooksListBusinessLogic, BooksListDataStore
                 return
             }
             
+            self?.books = books
+
             guard books != nil, !books!.isEmpty else {
                 // Books might be nil or Empty
                 return
