@@ -20,6 +20,12 @@
 		525934E42303F0E700C374BA /* WebServiceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525934E32303F0E700C374BA /* WebServiceHelper.swift */; };
 		525934E62303F21700C374BA /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525934E52303F21700C374BA /* Helper.swift */; };
 		525934E92303F4C200C374BA /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525934E82303F4C200C374BA /* Book.swift */; };
+		525934F22303F70800C374BA /* BooksListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525934EC2303F70800C374BA /* BooksListPresenter.swift */; };
+		525934F32303F70800C374BA /* BooksListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525934ED2303F70800C374BA /* BooksListWorker.swift */; };
+		525934F42303F70800C374BA /* BooksListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525934EE2303F70800C374BA /* BooksListRouter.swift */; };
+		525934F52303F70800C374BA /* BooksListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525934EF2303F70800C374BA /* BooksListModels.swift */; };
+		525934F62303F70800C374BA /* BooksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525934F02303F70800C374BA /* BooksListViewController.swift */; };
+		525934F72303F70800C374BA /* BooksListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525934F12303F70800C374BA /* BooksListInteractor.swift */; };
 		B70202D00746E3B22ABA9B38 /* Pods_BooksArchiveDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CAF9CF35CB14F522ED470CE /* Pods_BooksArchiveDemoUITests.framework */; };
 		E5B463C7EB1395C13B106C2A /* Pods_BooksArchiveDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 228F31D7C9809BC4FB046B25 /* Pods_BooksArchiveDemo.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +70,12 @@
 		525934E32303F0E700C374BA /* WebServiceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceHelper.swift; sourceTree = "<group>"; };
 		525934E52303F21700C374BA /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		525934E82303F4C200C374BA /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		525934EC2303F70800C374BA /* BooksListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListPresenter.swift; sourceTree = "<group>"; };
+		525934ED2303F70800C374BA /* BooksListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListWorker.swift; sourceTree = "<group>"; };
+		525934EE2303F70800C374BA /* BooksListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListRouter.swift; sourceTree = "<group>"; };
+		525934EF2303F70800C374BA /* BooksListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListModels.swift; sourceTree = "<group>"; };
+		525934F02303F70800C374BA /* BooksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListViewController.swift; sourceTree = "<group>"; };
+		525934F12303F70800C374BA /* BooksListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListInteractor.swift; sourceTree = "<group>"; };
 		6024A61EE4FD7DB088E558A7 /* Pods-BooksArchiveDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BooksArchiveDemo.release.xcconfig"; path = "Target Support Files/Pods-BooksArchiveDemo/Pods-BooksArchiveDemo.release.xcconfig"; sourceTree = "<group>"; };
 		73A4315BF582273218FBC8CD /* Pods_BooksArchiveDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BooksArchiveDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7B97AF84A83E4E460FF63F2 /* Pods-BooksArchiveDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BooksArchiveDemo.debug.xcconfig"; path = "Target Support Files/Pods-BooksArchiveDemo/Pods-BooksArchiveDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +136,7 @@
 		525934AB2303EB2B00C374BA /* BooksArchiveDemo */ = {
 			isa = PBXGroup;
 			children = (
+				525934EA2303F69400C374BA /* Scene */,
 				525934AC2303EB2B00C374BA /* AppDelegate.swift */,
 				525934B02303EB2B00C374BA /* Main.storyboard */,
 				525934DD2303EFF800C374BA /* TableViewCell */,
@@ -187,6 +200,27 @@
 				525934E82303F4C200C374BA /* Book.swift */,
 			);
 			path = Mapper;
+			sourceTree = "<group>";
+		};
+		525934EA2303F69400C374BA /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				525934EB2303F6E100C374BA /* BooksList */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		525934EB2303F6E100C374BA /* BooksList */ = {
+			isa = PBXGroup;
+			children = (
+				525934EF2303F70800C374BA /* BooksListModels.swift */,
+				525934F02303F70800C374BA /* BooksListViewController.swift */,
+				525934F12303F70800C374BA /* BooksListInteractor.swift */,
+				525934EC2303F70800C374BA /* BooksListPresenter.swift */,
+				525934ED2303F70800C374BA /* BooksListWorker.swift */,
+				525934EE2303F70800C374BA /* BooksListRouter.swift */,
+			);
+			path = BooksList;
 			sourceTree = "<group>";
 		};
 		611811614DE02A3D75147A09 /* Pods */ = {
@@ -493,10 +527,16 @@
 				525934E92303F4C200C374BA /* Book.swift in Sources */,
 				525934E62303F21700C374BA /* Helper.swift in Sources */,
 				525934DC2303EED400C374BA /* TableViewHelper.swift in Sources */,
+				525934F42303F70800C374BA /* BooksListRouter.swift in Sources */,
 				525934DF2303F02400C374BA /* BookThumbnailTableViewCell.swift in Sources */,
+				525934F72303F70800C374BA /* BooksListInteractor.swift in Sources */,
+				525934F62303F70800C374BA /* BooksListViewController.swift in Sources */,
+				525934F52303F70800C374BA /* BooksListModels.swift in Sources */,
 				525934E22303F0D100C374BA /* WebService.swift in Sources */,
+				525934F22303F70800C374BA /* BooksListPresenter.swift in Sources */,
 				525934E42303F0E700C374BA /* WebServiceHelper.swift in Sources */,
 				525934AD2303EB2B00C374BA /* AppDelegate.swift in Sources */,
+				525934F32303F70800C374BA /* BooksListWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
