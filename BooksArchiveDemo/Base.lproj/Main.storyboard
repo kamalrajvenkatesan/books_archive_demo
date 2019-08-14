@@ -135,6 +135,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="placeholderView" destination="8cc-0j-FNA" id="UBZ-vw-Wp0"/>
                         <outlet property="tableView" destination="7Fg-k2-6Q6" id="tkA-1P-TLV"/>
                     </connections>
                 </viewController>

@@ -15,14 +15,16 @@ import UIKit
 protocol BooksListPresentationLogic
 {
     func presentBooks(response: BooksList.getBooks.Response)
+    func presentPlaceholder(show: Bool, type: PlaceholderType?)
 }
 
 class BooksListPresenter: BooksListPresentationLogic
 {
     weak var viewController: BooksListDisplayLogic?
     
-    // MARK: Do something
     
+    
+    // MARK: Present Book
     func presentBooks(response: BooksList.getBooks.Response)
     {
         
@@ -32,5 +34,9 @@ class BooksListPresenter: BooksListPresentationLogic
         
         let viewModel = BooksList.getBooks.ViewModel(cells: cellConfigs)
         viewController?.displayListOfBooks(viewModel: viewModel)
+    }
+    
+    func presentPlaceholder(show: Bool, type: PlaceholderType?) {
+        viewController?.handlePlaceholder(show: show, type: type)
     }
 }

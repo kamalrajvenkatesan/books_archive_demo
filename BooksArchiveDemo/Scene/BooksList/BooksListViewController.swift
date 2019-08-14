@@ -15,7 +15,7 @@ import UIKit
 protocol BooksListDisplayLogic: class
 {
     func displayListOfBooks(viewModel: BooksList.getBooks.ViewModel)
-    func handlePlaceholder(show: Bool, type: PlaceholderType)
+    func handlePlaceholder(show: Bool, type: PlaceholderType?)
 }
 
 class BooksListViewController: UIViewController, BooksListDisplayLogic
@@ -112,7 +112,7 @@ class BooksListViewController: UIViewController, BooksListDisplayLogic
         self.getBooksViewModel = viewModel
     }
     
-    func handlePlaceholder(show: Bool, type: PlaceholderType) {
+    func handlePlaceholder(show: Bool, type: PlaceholderType?) {
         
         self.placeholderView.isHidden = !show
         self.placeholderView.type = type

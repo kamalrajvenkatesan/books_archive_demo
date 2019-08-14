@@ -35,19 +35,23 @@ class BooksListInteractor: BooksListBusinessLogic, BooksListDataStore
         worker = BooksListWorker()
         worker?.getAllBooks(completion: { [weak self] (books, error, statusCode) in
             
-            guard error == nil else {
+            self?.books = books
+            
+            guard error == nil, books != nil else {
                 // Error
+                self?.presenter?.presentPlaceholder(show: true, type: (error == BookssAppErrors.NoInternet) ? PlaceholderType.noInternet : PlaceholderType.somethingWentWrong )
                 return
             }
             
-            self?.books = books
-
-            guard books != nil, !books!.isEmpty else {
-                // Books might be nil or Empty
+            guard !books!.isEmpty else {
+                // Books List is Empty
+                self?.presenter?.presentPlaceholder(show: true, type: .noResult)
                 return
             }
             
             // Books Available
+            self?.presenter?.presentPlaceholder(show: false, type: nil) // Hiding Placeholder view
+            
             let response = BooksList.getBooks.Response(books: books!)
             self?.presenter?.presentBooks(response: response)
         })
