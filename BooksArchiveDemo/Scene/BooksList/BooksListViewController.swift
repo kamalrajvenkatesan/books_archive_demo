@@ -109,6 +109,15 @@ class BooksListViewController: UIViewController, BooksListDisplayLogic
     func displayListOfBooks(viewModel: BooksList.getBooks.ViewModel) {
         self.getBooksViewModel = viewModel
     }
+    
+    // MARK: Action
+    @IBAction func refreshBooksList(sender: UIBarButtonItem) {
+        interactor?.getBooks(request: BooksList.getBooks.Request())
+    }
+    
+    @IBAction func showFilters(sender: UIBarButtonItem) {
+        
+    }
 }
 
 

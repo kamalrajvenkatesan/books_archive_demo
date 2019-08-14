@@ -60,7 +60,7 @@
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6RS-jE-3ba">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6RS-jE-3ba">
                                                                                     <rect key="frame" x="133" y="0.0" width="124" height="60.5"/>
                                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                                                                     <nil key="textColor"/>
@@ -114,8 +114,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="xtd-fX-vnC">
                         <rightBarButtonItems>
-                            <barButtonItem image="Refresh" id="90c-Gs-FO8"/>
-                            <barButtonItem image="Filter" id="T60-Rr-iIi"/>
+                            <barButtonItem image="Refresh" id="90c-Gs-FO8">
+                                <connections>
+                                    <action selector="refreshBooksListWithSender:" destination="BYZ-38-t0r" id="mFF-Lw-qBC"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="Filter" id="T60-Rr-iIi">
+                                <connections>
+                                    <action selector="showFiltersWithSender:" destination="BYZ-38-t0r" id="Al7-xk-ec0"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
