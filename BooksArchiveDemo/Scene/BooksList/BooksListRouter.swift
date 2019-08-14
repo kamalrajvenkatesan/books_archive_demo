@@ -29,5 +29,12 @@ class BooksListRouter: NSObject, BooksListRoutingLogic, BooksListDataPassing
     // MARK: Routing
     func navigateToDetailView(index: Int) {
         
+        guard let book = dataStore?.books?[index] else {
+            return
+        }
+        
+        let vc = self.viewController?.storyboard?.instantiateViewController(withIdentifier: "BookDetailViewController") as! BookDetailViewController
+        vc.book = book
+        self.viewController?.navigationController?.pushViewController(vc, animated: true)
     }
 }
