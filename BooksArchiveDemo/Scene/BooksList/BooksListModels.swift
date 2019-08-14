@@ -26,6 +26,7 @@ enum BooksList
         }
         struct ViewModel
         {
+            let cells: [CellConfigurator]
         }
     }
 }

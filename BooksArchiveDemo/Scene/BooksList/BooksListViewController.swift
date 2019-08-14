@@ -19,11 +19,20 @@ protocol BooksListDisplayLogic: class
 
 class BooksListViewController: UIViewController, BooksListDisplayLogic
 {
+    
+    // MARK: UIObject
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+    
     var interactor: BooksListBusinessLogic?
     var router: (NSObjectProtocol & BooksListRoutingLogic & BooksListDataPassing)?
     
-    // MARK: Object lifecycle
+    var getBooksViewModel: BooksList.getBooks.ViewModel?
     
+    
+    
+    // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
     {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -36,8 +45,9 @@ class BooksListViewController: UIViewController, BooksListDisplayLogic
         setup()
     }
     
-    // MARK: Setup
     
+    
+    // MARK: Setup
     private func setup()
     {
         let viewController = self
@@ -52,8 +62,9 @@ class BooksListViewController: UIViewController, BooksListDisplayLogic
         router.dataStore = interactor
     }
     
-    // MARK: Routing
     
+    
+    // MARK: Routing
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if let scene = segue.identifier {
@@ -64,26 +75,25 @@ class BooksListViewController: UIViewController, BooksListDisplayLogic
         }
     }
     
-    // MARK: View lifecycle
     
+    
+    // MARK: View lifecycle
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        doSomething()
+        getAllBooks()
     }
     
-    // MARK: Do something
     
-    //@IBOutlet weak var nameTextField: UITextField!
     
-    func doSomething()
+    // MARK: Get Books
+    func getAllBooks()
     {
         let request = BooksList.getBooks.Request()
         interactor?.getBooks(request: request)
     }
     
-    func displayListOfBooks(viewModel: BooksList.getBooks.ViewModel)
-    {
-        //nameTextField.text = viewModel.name
+    func displayListOfBooks(viewModel: BooksList.getBooks.ViewModel) {
+        self.getBooksViewModel = viewModel
     }
 }
