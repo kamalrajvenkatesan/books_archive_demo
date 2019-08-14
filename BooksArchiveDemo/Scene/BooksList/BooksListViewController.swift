@@ -24,6 +24,7 @@ class BooksListViewController: UIViewController, BooksListDisplayLogic
     // MARK: UIObject
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var placeholderView: PlaceholderView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
     

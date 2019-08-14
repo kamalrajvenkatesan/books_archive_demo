@@ -106,10 +106,15 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Ox0-GE-sAM">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Fg-k2-6Q6" secondAttribute="trailing" id="1d6-aR-rTi"/>
+                            <constraint firstItem="Ox0-GE-sAM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3ca-YQ-fAA"/>
+                            <constraint firstItem="Ox0-GE-sAM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9RZ-hU-7mZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8cc-0j-FNA" secondAttribute="bottom" id="BSU-fE-lba"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7Fg-k2-6Q6" secondAttribute="bottom" id="Pzi-X9-tRM"/>
                             <constraint firstItem="8cc-0j-FNA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Vrd-9m-WOp"/>
@@ -135,6 +140,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="Ox0-GE-sAM" id="BaC-8v-Tci"/>
                         <outlet property="placeholderView" destination="8cc-0j-FNA" id="UBZ-vw-Wp0"/>
                         <outlet property="tableView" destination="7Fg-k2-6Q6" id="tkA-1P-TLV"/>
                     </connections>
