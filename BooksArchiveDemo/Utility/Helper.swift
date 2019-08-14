@@ -7,3 +7,18 @@
 //
 
 import Foundation
+
+/** To get error from error code */
+public var getWebServiceError: (Int?) -> BookssAppErrors? = { (errorCode) in
+    
+    guard errorCode != nil else {
+        return nil
+    }
+    
+    guard let error = BookssAppErrors(rawValue: errorCode!) else {
+        return BookssAppErrors.Unknown
+    }
+    
+    return error
+    
+}
