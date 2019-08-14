@@ -54,13 +54,13 @@
                                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="UOr-nd-5YX">
                                                                             <rect key="frame" x="0.0" y="0.0" width="257" height="60.5"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Mz-II-X93">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Mz-II-X93">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="124" height="60.5"/>
                                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6RS-jE-3ba">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6RS-jE-3ba">
                                                                                     <rect key="frame" x="133" y="0.0" width="124" height="60.5"/>
                                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                                                                     <nil key="textColor"/>
@@ -112,7 +112,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="xtd-fX-vnC"/>
+                    <navigationItem key="navigationItem" id="xtd-fX-vnC">
+                        <rightBarButtonItems>
+                            <barButtonItem image="Refresh" id="90c-Gs-FO8"/>
+                            <barButtonItem image="Filter" id="T60-Rr-iIi"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="7Fg-k2-6Q6" id="tkA-1P-TLV"/>
                     </connections>
@@ -196,4 +201,9 @@
             <point key="canvasLocation" x="63.768115942028992" y="754.6875"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Filter" width="24" height="24"/>
+        <image name="Refresh" width="24" height="24"/>
+    </resources>
+    <color key="tintColor" red="0.31372549020000001" green="0.89019607840000003" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>
