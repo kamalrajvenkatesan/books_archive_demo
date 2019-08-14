@@ -26,16 +26,27 @@ class BooksListInteractor: BooksListBusinessLogic, BooksListDataStore
 {
     var presenter: BooksListPresentationLogic?
     var worker: BooksListWorker?
-    //var name: String = ""
     
-    // MARK: Do something
-    
+    // MARK: Get Books
     func getBooks(request: BooksList.getBooks.Request)
     {
         worker = BooksListWorker()
-        worker?.doSomeWork()
+        worker?.getAllBooks(completion: { [weak self] (books, error, statusCode) in
+            
+            guard error == nil else {
+                // Error
+                return
+            }
+            
+            guard books != nil, !books!.isEmpty else {
+                // Books might be nil or Empty
+                return
+            }
+            
+            // Books Available
+            let response = BooksList.getBooks.Response(books: books!)
+            self?.presenter?.presentBooks(response: response)
+        })
         
-        let response = BooksList.getBooks.Response(books: [])
-        presenter?.presentBooks(response: response)
     }
 }
