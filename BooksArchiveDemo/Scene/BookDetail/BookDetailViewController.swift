@@ -19,10 +19,28 @@ protocol BookDetailDisplayLogic: class
 
 class BookDetailViewController: UIViewController, BookDetailDisplayLogic
 {
+    
+    @IBOutlet weak var bookImageView: UIImageView!
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var genreLabel: UILabel!
+    
     var interactor: BookDetailBusinessLogic?
     var router: (NSObjectProtocol & BookDetailRoutingLogic & BookDetailDataPassing)?
     
     var book: Book?
+    
+    var viewModel: BookDetail.ShowBook.ViewModel? {
+        didSet {
+            if let urlString = viewModel?.imageUrl, let url = URL(string: urlString) {
+                bookImageView.af_setImage(withURL: url)
+            } else {
+                bookImageView.image = nil
+            }
+            self.title = viewModel?.title
+            authorLabel.text = viewModel?.author
+            genreLabel.text = viewModel?.genre
+        }
+    }
     
     // MARK: Object lifecycle
     
@@ -75,17 +93,12 @@ class BookDetailViewController: UIViewController, BookDetailDisplayLogic
     }
     
     // MARK: Do something
-    
-    //@IBOutlet weak var nameTextField: UITextField!
-    
-    func doSomething()
-    {
+    func doSomething() {
         let request = BookDetail.ShowBook.Request(book: self.book)
         interactor?.doSomething(request: request)
     }
     
-    func displaySomething(viewModel: BookDetail.ShowBook.ViewModel)
-    {
-        //nameTextField.text = viewModel.name
+    func displaySomething(viewModel: BookDetail.ShowBook.ViewModel) {
+        self.viewModel = viewModel
     }
 }

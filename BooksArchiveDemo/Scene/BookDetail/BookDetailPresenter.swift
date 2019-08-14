@@ -25,7 +25,7 @@ class BookDetailPresenter: BookDetailPresentationLogic
     func presentSomething(response: BookDetail.ShowBook.Response)
     {
         let viewModel = BookDetail.ShowBook.ViewModel(
-            title: response.book?.book_title, imageUrl: response.book?.image_url, author: response.book?.author_name, genre: response.book?.genre)
+            title: response.book?.book_title, imageUrl: response.book?.image_url, author: response.book?.author_name?.capitalized, genre: response.book?.genre?.capitalized)
         viewController?.displaySomething(viewModel: viewModel)
     }
 }
