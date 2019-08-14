@@ -88,13 +88,16 @@ class BooksListViewController: UIViewController, BooksListDisplayLogic
     
     
     // MARK: View lifecycle
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
         getAllBooks()
+        removeEmptyRows()
     }
     
-    
+    // MARK: Helper
+    private func removeEmptyRows() {
+        self.tableView.tableFooterView = UIView()
+    }
     
     // MARK: Get Books
     func getAllBooks()
