@@ -14,7 +14,7 @@ import UIKit
 
 protocol BookDetailPresentationLogic
 {
-    func presentSomething(response: BookDetail.Something.Response)
+    func presentSomething(response: BookDetail.ShowBook.Response)
 }
 
 class BookDetailPresenter: BookDetailPresentationLogic
@@ -22,10 +22,10 @@ class BookDetailPresenter: BookDetailPresentationLogic
     weak var viewController: BookDetailDisplayLogic?
     
     // MARK: Do something
-    
-    func presentSomething(response: BookDetail.Something.Response)
+    func presentSomething(response: BookDetail.ShowBook.Response)
     {
-        let viewModel = BookDetail.Something.ViewModel()
+        let viewModel = BookDetail.ShowBook.ViewModel(
+            title: response.book?.book_title, imageUrl: response.book?.image_url, author: response.book?.author_name, genre: response.book?.genre)
         viewController?.displaySomething(viewModel: viewModel)
     }
 }

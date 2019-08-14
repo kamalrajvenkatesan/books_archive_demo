@@ -16,16 +16,22 @@ enum BookDetail
 {
     // MARK: Use cases
     
-    enum Something
+    enum ShowBook
     {
         struct Request
         {
+            let book: Book?
         }
         struct Response
         {
+            let book: Book?
         }
         struct ViewModel
         {
+            let title: String?
+            let imageUrl: String?
+            let author: String?
+            let genre: String?
         }
     }
 }

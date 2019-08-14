@@ -14,13 +14,15 @@ import UIKit
 
 protocol BookDetailDisplayLogic: class
 {
-    func displaySomething(viewModel: BookDetail.Something.ViewModel)
+    func displaySomething(viewModel: BookDetail.ShowBook.ViewModel)
 }
 
 class BookDetailViewController: UIViewController, BookDetailDisplayLogic
 {
     var interactor: BookDetailBusinessLogic?
     var router: (NSObjectProtocol & BookDetailRoutingLogic & BookDetailDataPassing)?
+    
+    var book: Book?
     
     // MARK: Object lifecycle
     
@@ -78,11 +80,11 @@ class BookDetailViewController: UIViewController, BookDetailDisplayLogic
     
     func doSomething()
     {
-        let request = BookDetail.Something.Request()
+        let request = BookDetail.ShowBook.Request(book: self.book)
         interactor?.doSomething(request: request)
     }
     
-    func displaySomething(viewModel: BookDetail.Something.ViewModel)
+    func displaySomething(viewModel: BookDetail.ShowBook.ViewModel)
     {
         //nameTextField.text = viewModel.name
     }

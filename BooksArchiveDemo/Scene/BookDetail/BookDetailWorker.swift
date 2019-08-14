@@ -12,9 +12,5 @@
 
 import UIKit
 
-class BookDetailWorker
-{
-    func doSomeWork()
-    {
-    }
+class BookDetailWorker {
 }
