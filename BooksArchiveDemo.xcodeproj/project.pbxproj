@@ -20,6 +20,7 @@
 		525934E22303F0D100C374BA /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525934E12303F0D100C374BA /* WebService.swift */; };
 		525934E42303F0E700C374BA /* WebServiceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525934E32303F0E700C374BA /* WebServiceHelper.swift */; };
 		525934E62303F21700C374BA /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525934E52303F21700C374BA /* Helper.swift */; };
+		525934E92303F4C200C374BA /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525934E82303F4C200C374BA /* Book.swift */; };
 		B70202D00746E3B22ABA9B38 /* Pods_BooksArchiveDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CAF9CF35CB14F522ED470CE /* Pods_BooksArchiveDemoUITests.framework */; };
 		E5B463C7EB1395C13B106C2A /* Pods_BooksArchiveDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 228F31D7C9809BC4FB046B25 /* Pods_BooksArchiveDemo.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +65,7 @@
 		525934E12303F0D100C374BA /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		525934E32303F0E700C374BA /* WebServiceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceHelper.swift; sourceTree = "<group>"; };
 		525934E52303F21700C374BA /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		525934E82303F4C200C374BA /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		6024A61EE4FD7DB088E558A7 /* Pods-BooksArchiveDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BooksArchiveDemo.release.xcconfig"; path = "Target Support Files/Pods-BooksArchiveDemo/Pods-BooksArchiveDemo.release.xcconfig"; sourceTree = "<group>"; };
 		73A4315BF582273218FBC8CD /* Pods_BooksArchiveDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BooksArchiveDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7B97AF84A83E4E460FF63F2 /* Pods-BooksArchiveDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BooksArchiveDemo.debug.xcconfig"; path = "Target Support Files/Pods-BooksArchiveDemo/Pods-BooksArchiveDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -175,10 +177,19 @@
 		525934E02303F0A100C374BA /* WebService */ = {
 			isa = PBXGroup;
 			children = (
+				525934E72303F4B200C374BA /* Mapper */,
 				525934E12303F0D100C374BA /* WebService.swift */,
 				525934E32303F0E700C374BA /* WebServiceHelper.swift */,
 			);
 			path = WebService;
+			sourceTree = "<group>";
+		};
+		525934E72303F4B200C374BA /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				525934E82303F4C200C374BA /* Book.swift */,
+			);
+			path = Mapper;
 			sourceTree = "<group>";
 		};
 		611811614DE02A3D75147A09 /* Pods */ = {
@@ -482,6 +493,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				525934E92303F4C200C374BA /* Book.swift in Sources */,
 				525934AF2303EB2B00C374BA /* ViewController.swift in Sources */,
 				525934E62303F21700C374BA /* Helper.swift in Sources */,
 				525934DC2303EED400C374BA /* TableViewHelper.swift in Sources */,
