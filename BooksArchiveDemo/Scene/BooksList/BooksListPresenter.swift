@@ -14,7 +14,7 @@ import UIKit
 
 protocol BooksListPresentationLogic
 {
-    func presentSomething(response: BooksList.getBooks.Response)
+    func presentBooks(response: BooksList.getBooks.Response)
 }
 
 class BooksListPresenter: BooksListPresentationLogic
@@ -23,9 +23,9 @@ class BooksListPresenter: BooksListPresentationLogic
     
     // MARK: Do something
     
-    func presentSomething(response: BooksList.getBooks.Response)
+    func presentBooks(response: BooksList.getBooks.Response)
     {
         let viewModel = BooksList.getBooks.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+        viewController?.displayListOfBooks(viewModel: viewModel)
     }
 }

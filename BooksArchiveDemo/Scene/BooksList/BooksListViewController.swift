@@ -14,7 +14,7 @@ import UIKit
 
 protocol BooksListDisplayLogic: class
 {
-    func displaySomething(viewModel: BooksList.getBooks.ViewModel)
+    func displayListOfBooks(viewModel: BooksList.getBooks.ViewModel)
 }
 
 class BooksListViewController: UIViewController, BooksListDisplayLogic
@@ -79,10 +79,10 @@ class BooksListViewController: UIViewController, BooksListDisplayLogic
     func doSomething()
     {
         let request = BooksList.getBooks.Request()
-        interactor?.doSomething(request: request)
+        interactor?.getBooks(request: request)
     }
     
-    func displaySomething(viewModel: BooksList.getBooks.ViewModel)
+    func displayListOfBooks(viewModel: BooksList.getBooks.ViewModel)
     {
         //nameTextField.text = viewModel.name
     }
