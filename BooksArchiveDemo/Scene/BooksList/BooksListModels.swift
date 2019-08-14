@@ -14,18 +14,18 @@ import UIKit
 
 enum BooksList
 {
-
-  enum getBooks
-  {
-    struct Request
+    
+    enum getBooks
     {
+        struct Request
+        {
+        }
+        struct Response
+        {
+            let books: [Book]
+        }
+        struct ViewModel
+        {
+        }
     }
-    struct Response
-    {
-        let books: [Book]
-    }
-    struct ViewModel
-    {
-    }
-  }
 }

@@ -14,18 +14,18 @@ import UIKit
 
 protocol BooksListPresentationLogic
 {
-  func presentSomething(response: BooksList.getBooks.Response)
+    func presentSomething(response: BooksList.getBooks.Response)
 }
 
 class BooksListPresenter: BooksListPresentationLogic
 {
-  weak var viewController: BooksListDisplayLogic?
-  
-  // MARK: Do something
-  
-  func presentSomething(response: BooksList.getBooks.Response)
-  {
-    let viewModel = BooksList.getBooks.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+    weak var viewController: BooksListDisplayLogic?
+    
+    // MARK: Do something
+    
+    func presentSomething(response: BooksList.getBooks.Response)
+    {
+        let viewModel = BooksList.getBooks.ViewModel()
+        viewController?.displaySomething(viewModel: viewModel)
+    }
 }

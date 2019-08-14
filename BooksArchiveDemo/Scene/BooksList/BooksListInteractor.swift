@@ -14,28 +14,28 @@ import UIKit
 
 protocol BooksListBusinessLogic
 {
-  func doSomething(request: BooksList.getBooks.Request)
+    func doSomething(request: BooksList.getBooks.Request)
 }
 
 protocol BooksListDataStore
 {
-  //var name: String { get set }
+    //var name: String { get set }
 }
 
 class BooksListInteractor: BooksListBusinessLogic, BooksListDataStore
 {
-  var presenter: BooksListPresentationLogic?
-  var worker: BooksListWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: BooksList.getBooks.Request)
-  {
-    worker = BooksListWorker()
-    worker?.doSomeWork()
+    var presenter: BooksListPresentationLogic?
+    var worker: BooksListWorker?
+    //var name: String = ""
     
-    let response = BooksList.getBooks.Response()
-    presenter?.presentSomething(response: response)
-  }
+    // MARK: Do something
+    
+    func doSomething(request: BooksList.getBooks.Request)
+    {
+        worker = BooksListWorker()
+        worker?.doSomeWork()
+        
+        let response = BooksList.getBooks.Response()
+        presenter?.presentSomething(response: response)
+    }
 }
