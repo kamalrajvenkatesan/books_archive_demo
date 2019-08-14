@@ -14,6 +14,7 @@ import UIKit
 
 class BooksListWorker
 {
-    func getAllBooks() {
+    func getAllBooks(completion: @escaping (([Book]?, BookssAppErrors?, Int?) -> Void)) {
+        WebService().request(responseType: [Book].self, route: .getAllBooks, param: nil, completion: completion)
     }
 }
