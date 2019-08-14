@@ -15,6 +15,7 @@
 		525934B72303EB3300C374BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 525934B52303EB3300C374BA /* LaunchScreen.storyboard */; };
 		525934C22303EB3300C374BA /* BooksArchiveDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525934C12303EB3300C374BA /* BooksArchiveDemoTests.swift */; };
 		525934CD2303EB3300C374BA /* BooksArchiveDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525934CC2303EB3300C374BA /* BooksArchiveDemoUITests.swift */; };
+		525934DC2303EED400C374BA /* TableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525934DB2303EED400C374BA /* TableViewHelper.swift */; };
 		B70202D00746E3B22ABA9B38 /* Pods_BooksArchiveDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CAF9CF35CB14F522ED470CE /* Pods_BooksArchiveDemoUITests.framework */; };
 		E5B463C7EB1395C13B106C2A /* Pods_BooksArchiveDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 228F31D7C9809BC4FB046B25 /* Pods_BooksArchiveDemo.framework */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		525934C82303EB3300C374BA /* BooksArchiveDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BooksArchiveDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		525934CC2303EB3300C374BA /* BooksArchiveDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksArchiveDemoUITests.swift; sourceTree = "<group>"; };
 		525934CE2303EB3300C374BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		525934DB2303EED400C374BA /* TableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHelper.swift; sourceTree = "<group>"; };
 		6024A61EE4FD7DB088E558A7 /* Pods-BooksArchiveDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BooksArchiveDemo.release.xcconfig"; path = "Target Support Files/Pods-BooksArchiveDemo/Pods-BooksArchiveDemo.release.xcconfig"; sourceTree = "<group>"; };
 		73A4315BF582273218FBC8CD /* Pods_BooksArchiveDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BooksArchiveDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7B97AF84A83E4E460FF63F2 /* Pods-BooksArchiveDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BooksArchiveDemo.debug.xcconfig"; path = "Target Support Files/Pods-BooksArchiveDemo/Pods-BooksArchiveDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				525934AC2303EB2B00C374BA /* AppDelegate.swift */,
 				525934AE2303EB2B00C374BA /* ViewController.swift */,
 				525934B02303EB2B00C374BA /* Main.storyboard */,
+				525934DA2303EEBE00C374BA /* Utility */,
 				525934B32303EB3300C374BA /* Assets.xcassets */,
 				525934B52303EB3300C374BA /* LaunchScreen.storyboard */,
 				525934B82303EB3300C374BA /* Info.plist */,
@@ -142,6 +145,14 @@
 			path = BooksArchiveDemoUITests;
 			sourceTree = "<group>";
 		};
+		525934DA2303EEBE00C374BA /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				525934DB2303EED400C374BA /* TableViewHelper.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		611811614DE02A3D75147A09 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,7 +163,6 @@
 				B791A59207E58B9C57F40CEB /* Pods-BooksArchiveDemoUITests.debug.xcconfig */,
 				E2F3D81166F822D291674ACB /* Pods-BooksArchiveDemoUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -445,6 +455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				525934AF2303EB2B00C374BA /* ViewController.swift in Sources */,
+				525934DC2303EED400C374BA /* TableViewHelper.swift in Sources */,
 				525934AD2303EB2B00C374BA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
