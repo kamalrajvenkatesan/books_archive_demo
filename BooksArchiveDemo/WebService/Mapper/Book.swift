@@ -26,6 +26,6 @@ public struct Book: Codable {
 
 extension Book {
     func getBookThumbnail() -> BookThumbnail {
-        return BookThumbnail(bookTitle: self.book_title, image: self.image_url, author: self.author_name, genre: self.genre)
+        return BookThumbnail(bookTitle: self.book_title.uppercased(), image: self.image_url, author: self.author_name?.capitalized, genre: self.genre?.capitalized)
     }
 }
