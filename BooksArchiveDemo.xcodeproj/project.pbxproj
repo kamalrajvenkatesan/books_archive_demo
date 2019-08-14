@@ -239,12 +239,12 @@
 		525934F823042F9100C374BA /* BookDetail */ = {
 			isa = PBXGroup;
 			children = (
-				525934F923042FC800C374BA /* BookDetailPresenter.swift */,
-				525934FA23042FC800C374BA /* BookDetailWorker.swift */,
-				525934FB23042FC800C374BA /* BookDetailRouter.swift */,
 				525934FC23042FC800C374BA /* BookDetailModels.swift */,
 				525934FD23042FC800C374BA /* BookDetailViewController.swift */,
 				525934FE23042FC800C374BA /* BookDetailInteractor.swift */,
+				525934F923042FC800C374BA /* BookDetailPresenter.swift */,
+				525934FA23042FC800C374BA /* BookDetailWorker.swift */,
+				525934FB23042FC800C374BA /* BookDetailRouter.swift */,
 			);
 			path = BookDetail;
 			sourceTree = "<group>";
