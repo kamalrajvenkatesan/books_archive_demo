@@ -14,15 +14,15 @@ import UIKit
 
 enum BooksList
 {
-  // MARK: Use cases
-  
-  enum Something
+
+  enum getBooks
   {
     struct Request
     {
     }
     struct Response
     {
+        let books: [Book]
     }
     struct ViewModel
     {

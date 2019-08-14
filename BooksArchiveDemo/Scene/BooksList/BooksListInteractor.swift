@@ -14,7 +14,7 @@ import UIKit
 
 protocol BooksListBusinessLogic
 {
-  func doSomething(request: BooksList.Something.Request)
+  func doSomething(request: BooksList.getBooks.Request)
 }
 
 protocol BooksListDataStore
@@ -30,12 +30,12 @@ class BooksListInteractor: BooksListBusinessLogic, BooksListDataStore
   
   // MARK: Do something
   
-  func doSomething(request: BooksList.Something.Request)
+  func doSomething(request: BooksList.getBooks.Request)
   {
     worker = BooksListWorker()
     worker?.doSomeWork()
     
-    let response = BooksList.Something.Response()
+    let response = BooksList.getBooks.Response()
     presenter?.presentSomething(response: response)
   }
 }
