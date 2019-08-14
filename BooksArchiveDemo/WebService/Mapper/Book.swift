@@ -8,6 +8,10 @@
 
 import Foundation
 
+public struct Books: Codable {
+    let list: [Book]
+}
+
 public struct Book: Codable {
     let id: String
     let book_title: String
@@ -17,4 +21,11 @@ public struct Book: Codable {
     let author_country: String?
     let sold_count: Int?
     let image_url: String?
+}
+
+
+extension Book {
+    func getBookThumbnail() -> BookThumbnail {
+        return BookThumbnail(bookTitle: self.book_title, image: self.image_url, author: self.author_name, genre: self.genre)
+    }
 }

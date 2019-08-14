@@ -28,7 +28,17 @@ class BooksListViewController: UIViewController, BooksListDisplayLogic
     var interactor: BooksListBusinessLogic?
     var router: (NSObjectProtocol & BooksListRoutingLogic & BooksListDataPassing)?
     
-    var getBooksViewModel: BooksList.getBooks.ViewModel?
+    var getBooksViewModel: BooksList.getBooks.ViewModel? {
+        didSet {
+            guard getBooksViewModel != nil else {
+                self.tableView.isHidden = true
+                return
+            }
+            
+            self.tableView.isHidden = false
+            self.tableView.reloadData()
+        }
+    }
     
     
     
@@ -95,5 +105,23 @@ class BooksListViewController: UIViewController, BooksListDisplayLogic
     
     func displayListOfBooks(viewModel: BooksList.getBooks.ViewModel) {
         self.getBooksViewModel = viewModel
+    }
+}
+
+
+extension BooksListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.getBooksViewModel?.cells.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let item = self.getBooksViewModel!.cells[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: type(of: item).reuseId, for: indexPath)
+        
+        item.configure(cell: cell)
+        
+        return cell
     }
 }

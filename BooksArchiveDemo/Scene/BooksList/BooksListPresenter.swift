@@ -25,7 +25,12 @@ class BooksListPresenter: BooksListPresentationLogic
     
     func presentBooks(response: BooksList.getBooks.Response)
     {
-        let viewModel = BooksList.getBooks.ViewModel()
+        
+        var cellConfigs: [CellConfigurator] {
+            return response.books.map{ BookThumbnailTableViewCellConfig.init(data: $0.getBookThumbnail()) }
+        }
+        
+        let viewModel = BooksList.getBooks.ViewModel(cells: cellConfigs)
         viewController?.displayListOfBooks(viewModel: viewModel)
     }
 }
