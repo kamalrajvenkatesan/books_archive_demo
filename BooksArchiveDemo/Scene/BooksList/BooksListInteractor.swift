@@ -80,7 +80,7 @@ class BooksListInteractor: BooksListBusinessLogic, BooksListDataStore
             // Books Available
             self?.presenter?.presentPlaceholder(show: false, type: nil) // Hiding Placeholder view
             
-            let response = BooksList.getBooks.Response(books: books!)
+            let response = BooksList.getBooks.Response(books: books!, filteredByAuthor: nil, filteredByGenre: nil, filteredByCountry: nil)
             self?.presenter?.presentBooks(response: response)
         })
     }
@@ -90,7 +90,7 @@ class BooksListInteractor: BooksListBusinessLogic, BooksListDataStore
         
         let filteredBooks = self?.books?.filter{ $0.author_name == searchKey }
         
-        let response = BooksList.getBooks.Response(books: filteredBooks ?? [])
+        let response = BooksList.getBooks.Response(books: filteredBooks ?? [], filteredByAuthor: searchKey, filteredByGenre: nil, filteredByCountry: nil)
         self?.presenter?.presentBooks(response: response)
     }
     
@@ -98,7 +98,7 @@ class BooksListInteractor: BooksListBusinessLogic, BooksListDataStore
         
         let filteredBooks = self?.books?.filter{ $0.genre == searchKey }
         
-        let response = BooksList.getBooks.Response(books: filteredBooks ?? [])
+        let response = BooksList.getBooks.Response(books: filteredBooks ?? [], filteredByAuthor: nil, filteredByGenre: searchKey, filteredByCountry: nil)
         self?.presenter?.presentBooks(response: response)
     }
     
@@ -106,7 +106,7 @@ class BooksListInteractor: BooksListBusinessLogic, BooksListDataStore
         
         let filteredBooks = self?.books?.filter{ $0.author_country == searchKey }
         
-        let response = BooksList.getBooks.Response(books: filteredBooks ?? [])
+        let response = BooksList.getBooks.Response(books: filteredBooks ?? [], filteredByAuthor: nil, filteredByGenre: nil, filteredByCountry: searchKey)
         self?.presenter?.presentBooks(response: response)
     }
 }

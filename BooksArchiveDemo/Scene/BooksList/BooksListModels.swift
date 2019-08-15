@@ -23,10 +23,14 @@ enum BooksList
         struct Response
         {
             let books: [Book]
+            let filteredByAuthor: String?
+            let filteredByGenre: String?
+            let filteredByCountry: String?
         }
         struct ViewModel
         {
             let cells: [CellConfigurator]
+            let title: String
         }
     }
 }

@@ -38,7 +38,7 @@ class BooksListViewController: UIViewController, BooksListDisplayLogic
                 self.tableView.isHidden = true
                 return
             }
-            
+            self.title = getBooksViewModel?.title
             self.tableView.isHidden = false
             self.tableView.reloadData()
         }

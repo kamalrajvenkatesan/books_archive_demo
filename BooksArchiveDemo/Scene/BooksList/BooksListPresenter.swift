@@ -33,7 +33,21 @@ class BooksListPresenter: BooksListPresentationLogic
             return response.books.map{ BookThumbnailTableViewCellConfig.init(data: $0.getBookThumbnail()) }
         }
         
-        let viewModel = BooksList.getBooks.ViewModel(cells: cellConfigs)
+        var title: String {
+            
+            if let author = response.filteredByAuthor {
+                return "Authored by \(author)"
+            } else if let genre = response.filteredByGenre {
+                return "Genre of \(genre)"
+            } else if let country = response.filteredByCountry {
+                return "List of books from country \(country)"
+            } else {
+                return "Books Archive"
+            }
+            
+        }
+        
+        let viewModel = BooksList.getBooks.ViewModel(cells: cellConfigs, title: title)
         viewController?.displayListOfBooks(viewModel: viewModel)
     }
     
