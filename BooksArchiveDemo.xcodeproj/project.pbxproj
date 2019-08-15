@@ -33,6 +33,7 @@
 		5259350323042FC800C374BA /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525934FD23042FC800C374BA /* BookDetailViewController.swift */; };
 		5259350423042FC800C374BA /* BookDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525934FE23042FC800C374BA /* BookDetailInteractor.swift */; };
 		52604F3823046ACE008FC3CD /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52604F3723046ACE008FC3CD /* PlaceholderView.swift */; };
+		52604F3A23052F06008FC3CD /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52604F3923052F06008FC3CD /* Colors.xcassets */; };
 		B70202D00746E3B22ABA9B38 /* Pods_BooksArchiveDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CAF9CF35CB14F522ED470CE /* Pods_BooksArchiveDemoUITests.framework */; };
 		E5B463C7EB1395C13B106C2A /* Pods_BooksArchiveDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 228F31D7C9809BC4FB046B25 /* Pods_BooksArchiveDemo.framework */; };
 /* End PBXBuildFile section */
@@ -90,6 +91,7 @@
 		525934FD23042FC800C374BA /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		525934FE23042FC800C374BA /* BookDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailInteractor.swift; sourceTree = "<group>"; };
 		52604F3723046ACE008FC3CD /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
+		52604F3923052F06008FC3CD /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		6024A61EE4FD7DB088E558A7 /* Pods-BooksArchiveDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BooksArchiveDemo.release.xcconfig"; path = "Target Support Files/Pods-BooksArchiveDemo/Pods-BooksArchiveDemo.release.xcconfig"; sourceTree = "<group>"; };
 		73A4315BF582273218FBC8CD /* Pods_BooksArchiveDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BooksArchiveDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7B97AF84A83E4E460FF63F2 /* Pods-BooksArchiveDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BooksArchiveDemo.debug.xcconfig"; path = "Target Support Files/Pods-BooksArchiveDemo/Pods-BooksArchiveDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				52604F3623046AA3008FC3CD /* CustomControls */,
 				525934DA2303EEBE00C374BA /* Utility */,
 				525934B32303EB3300C374BA /* Assets.xcassets */,
+				52604F3923052F06008FC3CD /* Colors.xcassets */,
 				525934B52303EB3300C374BA /* LaunchScreen.storyboard */,
 				525934B82303EB3300C374BA /* Info.plist */,
 			);
@@ -394,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				525934B72303EB3300C374BA /* LaunchScreen.storyboard in Resources */,
+				52604F3A23052F06008FC3CD /* Colors.xcassets in Resources */,
 				525934B42303EB3300C374BA /* Assets.xcassets in Resources */,
 				525934B22303EB2B00C374BA /* Main.storyboard in Resources */,
 			);
