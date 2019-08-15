@@ -26,6 +26,8 @@ class BooksListViewController: UIViewController, BooksListDisplayLogic
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var placeholderView: PlaceholderView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var filterBarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var refreshBarButtonItem: UIBarButtonItem!
     
     
     
@@ -37,9 +39,15 @@ class BooksListViewController: UIViewController, BooksListDisplayLogic
             guard getBooksViewModel != nil else {
                 self.tableView.isHidden = true
                 self.title = nil
+                self.filterBarButtonItem.isEnabled = false
+                self.refreshBarButtonItem.isEnabled = false
+                
                 return
             }
+            
             self.title = getBooksViewModel?.title
+            self.filterBarButtonItem.isEnabled = true
+            self.refreshBarButtonItem.isEnabled = true
             self.tableView.isHidden = false
             self.tableView.reloadData()
         }
@@ -131,7 +139,11 @@ class BooksListViewController: UIViewController, BooksListDisplayLogic
     }
     
     @IBAction func refreshBooksList(sender: UIBarButtonItem) {
-        interactor?.getBooks(request: BooksList.getBooks.Request())
+        guard self.getBooksViewModel != nil else {
+            return
+        }
+        
+        getAllBooks()
     }
     
     @IBAction func showFilters(sender: UIBarButtonItem) {

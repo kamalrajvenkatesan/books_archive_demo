@@ -150,12 +150,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="xtd-fX-vnC">
                         <rightBarButtonItems>
-                            <barButtonItem image="Refresh" id="90c-Gs-FO8">
+                            <barButtonItem enabled="NO" image="Refresh" id="90c-Gs-FO8">
                                 <connections>
                                     <action selector="refreshBooksListWithSender:" destination="BYZ-38-t0r" id="mFF-Lw-qBC"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="Filter" id="T60-Rr-iIi">
+                            <barButtonItem enabled="NO" image="Filter" id="T60-Rr-iIi">
                                 <connections>
                                     <action selector="showFiltersWithSender:" destination="BYZ-38-t0r" id="Al7-xk-ec0"/>
                                 </connections>
@@ -164,7 +164,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="Ox0-GE-sAM" id="BaC-8v-Tci"/>
+                        <outlet property="filterBarButtonItem" destination="T60-Rr-iIi" id="HRz-X8-XGV"/>
                         <outlet property="placeholderView" destination="8cc-0j-FNA" id="UBZ-vw-Wp0"/>
+                        <outlet property="refreshBarButtonItem" destination="90c-Gs-FO8" id="yXN-JD-vsC"/>
                         <outlet property="tableView" destination="7Fg-k2-6Q6" id="tkA-1P-TLV"/>
                     </connections>
                 </viewController>

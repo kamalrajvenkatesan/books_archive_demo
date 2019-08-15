@@ -42,6 +42,10 @@ class BooksListRouter: NSObject, BooksListRoutingLogic, BooksListDataPassing
     // MARK: Action Sheet
     func showFirstStepFilter() {
         
+        guard dataStore?.books != nil else {
+            return
+        }
+        
         let actionController = UIAlertController(title: "Filter by", message: nil, preferredStyle: .actionSheet)
         
         let actions: [UIAlertAction] = [
