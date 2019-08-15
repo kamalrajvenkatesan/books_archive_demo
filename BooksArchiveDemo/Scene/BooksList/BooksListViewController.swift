@@ -36,6 +36,7 @@ class BooksListViewController: UIViewController, BooksListDisplayLogic
         didSet {
             guard getBooksViewModel != nil else {
                 self.tableView.isHidden = true
+                self.title = nil
                 return
             }
             self.title = getBooksViewModel?.title
@@ -94,7 +95,6 @@ class BooksListViewController: UIViewController, BooksListDisplayLogic
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        getAllBooks()
         removeEmptyRows()
     }
     
@@ -125,6 +125,11 @@ class BooksListViewController: UIViewController, BooksListDisplayLogic
     }
     
     // MARK: Action
+    @IBAction func createBookLibrary(sender: UIButton) {
+        getAllBooks()
+        sender.isHidden = true
+    }
+    
     @IBAction func refreshBooksList(sender: UIBarButtonItem) {
         interactor?.getBooks(request: BooksList.getBooks.Request())
     }
