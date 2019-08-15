@@ -15,11 +15,17 @@ import UIKit
 protocol BooksListBusinessLogic
 {
     func getBooks(request: BooksList.getBooks.Request)
+    var filterAuthor: filterClosure { get set }
+    var filterGenre: filterClosure { get set }
+    var filterCountry: filterClosure { get set }
 }
 
 protocol BooksListDataStore
 {
     var books: [Book]? { get set }
+    var authors: Set<String> { get }
+    var genre: Set<String> { get }
+    var countries: Set<String> { get }
 }
 
 class BooksListInteractor: BooksListBusinessLogic, BooksListDataStore
@@ -28,6 +34,24 @@ class BooksListInteractor: BooksListBusinessLogic, BooksListDataStore
     var worker: BooksListWorker?
     
     var books: [Book]?
+    
+    var authors: Set<String> {
+        get {
+            return Set(books?.compactMap{ $0.author_name ?? nil } ?? []) 
+        }
+    }
+    
+    var genre: Set<String> {
+        get {
+            return Set(books?.compactMap{ $0.genre ?? nil } ?? [])
+        }
+    }
+    
+    var countries: Set<String> {
+        get {
+            return Set(books?.compactMap{ $0.author_country ?? nil } ?? [] )
+        }
+    }
     
     // MARK: Get Books
     func getBooks(request: BooksList.getBooks.Request)
@@ -59,6 +83,30 @@ class BooksListInteractor: BooksListBusinessLogic, BooksListDataStore
             let response = BooksList.getBooks.Response(books: books!)
             self?.presenter?.presentBooks(response: response)
         })
+    }
+    
+    // MARK: Filter
+    lazy var filterAuthor: filterClosure = { [weak self] (searchKey) in
         
+        let filteredBooks = self?.books?.filter{ $0.author_name == searchKey }
+        
+        let response = BooksList.getBooks.Response(books: filteredBooks ?? [])
+        self?.presenter?.presentBooks(response: response)
+    }
+    
+    lazy var filterGenre: filterClosure = { [weak self] (searchKey) in
+        
+        let filteredBooks = self?.books?.filter{ $0.genre == searchKey }
+        
+        let response = BooksList.getBooks.Response(books: filteredBooks ?? [])
+        self?.presenter?.presentBooks(response: response)
+    }
+    
+    lazy var filterCountry: filterClosure = { [weak self] (searchKey) in
+        
+        let filteredBooks = self?.books?.filter{ $0.author_country == searchKey }
+        
+        let response = BooksList.getBooks.Response(books: filteredBooks ?? [])
+        self?.presenter?.presentBooks(response: response)
     }
 }

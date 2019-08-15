@@ -8,6 +8,10 @@
 
 import Foundation
 
+// MARK: Typealias
+/** 1st Param is Key for filter, 2nd param is the search value for the respective key*/
+typealias filterClosure = ((String) -> ())
+
 /** To get error from error code */
 public var getWebServiceError: (Int?) -> BookssAppErrors? = { (errorCode) in
     

@@ -130,7 +130,7 @@ class BooksListViewController: UIViewController, BooksListDisplayLogic
     }
     
     @IBAction func showFilters(sender: UIBarButtonItem) {
-        
+        router?.showFirstStepFilter()
     }
 }
 
