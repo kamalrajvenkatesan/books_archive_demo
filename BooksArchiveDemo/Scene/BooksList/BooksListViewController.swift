@@ -155,6 +155,25 @@ extension BooksListViewController: UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title:  "Delete", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            success(true)
+        })
+        deleteAction.backgroundColor = .red
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let bookMarkAction = UIContextualAction(style: .normal, title: "Bookmark") { (_, _, success:(Bool) -> Void) in
+            success(true)
+        }
+        bookMarkAction.backgroundColor = UIColor(named: "ThemeColor")
+        
+        return UISwipeActionsConfiguration(actions: [bookMarkAction])
+    }
 }
 
 extension BooksListViewController: UITableViewDelegate {
